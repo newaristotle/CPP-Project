@@ -4,6 +4,7 @@
 using std::cout;
 using std::cin;
 
+
 void print_range(int lo, int hi)
 {
     if (lo > hi)
