@@ -1,29 +1,21 @@
-
 #include <iostream>
-
-using std::cout;
-using std::cin;
-
-
-void print_range(int lo, int hi)
-{
-    if (lo > hi)
-    {
-        print_range(hi, lo);
-        return;
-    }
-    for (int i = lo; i != hi; ++i)
-        cout << i << " ";
-}
-
+#include <typeinfo>
 
 int main()
 {
-    int low = 0, high = 0;
-    cout << "please input two integers:\n";
-    cin >> low >> high;
-    print_range(low, high);
+    const int i = 42;
+    auto j = i;
+    const auto &k = i;
+    auto *p = &i;
+    const auto j2 = i, &k2 = i;
+
+    // print i means int, and PKi means pointer to const int.
+    std::cout   << "j is "      << typeid(j).name()
+                << "\nk is "    << typeid(k).name()
+                << "\np is "    << typeid(p).name()
+                << "\nj2 is "   << typeid(j2).name()
+                << "\nk2 is "   << typeid(k2).name()
+                << std::endl;
+
     return 0;
 }
-
-
