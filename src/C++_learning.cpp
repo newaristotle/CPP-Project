@@ -16,6 +16,7 @@ void print_range(int lo, int hi)
         cout << i << " ";
 }
 
+
 int main()
 {
     int low = 0, high = 0;
